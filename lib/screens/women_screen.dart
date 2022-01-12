@@ -1,3 +1,4 @@
+import 'package:classy_ecom_desgn/screens/component/women_screen_body.dart';
 import 'package:flutter/material.dart';
 
 class WomenScreen extends StatefulWidget {
@@ -80,72 +81,79 @@ class _WomenScreenState extends State<WomenScreen> {
 
 
 
-      body: Column(
-        children: [
-          SizedBox(height: 30,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              children: [
-                SizedBox(width: 10,),
-                Expanded(
-                  child: Text('Women',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        //physics: NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height*.05),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  SizedBox(width: 10,),
+                  Expanded(
+                    child: Text('Women',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-                Expanded(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(5)
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: IconButton(
-                                onPressed: (){},
-                                icon: Image.asset('assets/icons/dropDown_icon.png')
-                            ),
-                          ),
-                          Expanded(
-                            flex: 4,
-                            child: DropdownButton(
-                              isExpanded: true,
-                              iconSize: 15,
-                              underline: SizedBox(),
-                              style: TextStyle(
-                                fontSize: 10,
-                                color: Colors.black
+                  Expanded(
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10, right: 10),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(5)
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: IconButton(
+                                  onPressed: (){},
+                                  icon: Image.asset('assets/icons/dropDown_icon.png')
                               ),
-                              value: dropdownvalue,
-                                icon: Icon(Icons.keyboard_arrow_down),
-                                items: items.map((String items){
-                                  return DropdownMenuItem(
-                                      child: Text(items),
-                                    value: items,
-                                  );
-                                }).toList(),
-                                onChanged: (String? newValue){
-                                  setState(() {
-                                    dropdownvalue = newValue!;
-                                  });
-                                }
                             ),
-                          ),
-                        ],
-                      ),
-                    )
-                )
-              ],
+                            Expanded(
+                              flex: 4,
+                              child: DropdownButton(
+                                isExpanded: true,
+                                iconSize: 15,
+                                underline: SizedBox(),
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.black
+                                ),
+                                value: dropdownvalue,
+                                  icon: Icon(Icons.keyboard_arrow_down),
+                                  items: items.map((String items){
+                                    return DropdownMenuItem(
+                                        child: Text(items),
+                                      value: items,
+                                    );
+                                  }).toList(),
+                                  onChanged: (String? newValue){
+                                    setState(() {
+                                      dropdownvalue = newValue!;
+                                    });
+                                  }
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                  )
+                ],
+              ),
             ),
-          ),
-          Padding(
-              padding: EdgeInsets.all(8),
+            Container(
+              height: MediaQuery.of(context).size.height*.65,
+              child: Padding(
+                  padding: EdgeInsets.all(10),
+                child: WomenScreenBody(),
+              ),
+            ),
 
-          )
 
-        ],
+          ],
+        ),
       ),
 
 
