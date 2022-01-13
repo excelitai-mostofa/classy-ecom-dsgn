@@ -31,10 +31,18 @@ class WomenProdCategoryModel with ChangeNotifier{
       categoryName: "Burqa",
       imageUrl: "assets/women_images/salwar_kameez.png",
     ),
+    WomenProdCategoryModel(
+      categoryName: "Shoes",
+      imageUrl: "assets/women_images/salwar_kameez.png",
+    ),
   ];
+
 
   List<WomenProdCategoryModel> get items{
     return [...prodCatData];
   }
+
+
+
 
 }

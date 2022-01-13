@@ -1,5 +1,9 @@
+import 'package:classy_ecom_desgn/models/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/models/women_prod_category.dart';
+import 'package:classy_ecom_desgn/models/women_prod_sub_cat.dart';
+import 'package:classy_ecom_desgn/screens/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/screens/women_screen.dart';
+import 'package:classy_ecom_desgn/screens/women_sub_cat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => WomenProdCategoryModel())
+        ChangeNotifierProvider(create: (_) => WomenProdCategoryModel()),
+        ChangeNotifierProvider(create: (_) => WomenProdSubCatModel()),
+        ChangeNotifierProvider(create: (_) => SubSubProductsModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,6 +39,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: WomenScreen(),
+
+        routes: {
+          WomenSubCatScreen.routeName: (context)=> WomenSubCatScreen(),
+          SubSubProductScreen.routeName: (context)=> SubSubProductScreen(),
+        },
       ),
     );
   }

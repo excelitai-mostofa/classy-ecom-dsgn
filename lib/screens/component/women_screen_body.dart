@@ -1,5 +1,5 @@
 import 'package:classy_ecom_desgn/models/women_prod_category.dart';
-import 'package:classy_ecom_desgn/widgets/women_cat_item.dart';
+import 'package:classy_ecom_desgn/screens/women_sub_cat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,27 +20,26 @@ class WomenScreenBody extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 2/3,
-        crossAxisSpacing: 30,
-        mainAxisSpacing: 30,
-        //mainAxisExtent: 300,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
       ),
       itemBuilder: (ctx,i) => Card(
         child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(width: 0, color: Colors.white)
-          ),
-          child: Column(
-            children: [
-              // ChangeNotifierProvider.value(
-              //   value: products[i],
-              //   child: WomenCatItem(),
-              // ),
-              Image.asset(products[i].imageUrl!),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(products[i].categoryName!),
-              )
-            ],
+          child: GestureDetector(
+            onTap: (){
+              Navigator.of(context).pushNamed(
+                WomenSubCatScreen.routeName
+              );
+            },
+            child: Column(
+              children: [
+                Image.asset(products[i].imageUrl!),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(products[i].categoryName!),
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:classy_ecom_desgn/screens/component/women_screen_body.dart';
+import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
 class WomenScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class WomenScreen extends StatefulWidget {
 
 class _WomenScreenState extends State<WomenScreen> {
 
-  int _currentIndex = 0;
+
 
   String dropdownvalue = 'Default';
   var items = [
@@ -43,14 +44,14 @@ class _WomenScreenState extends State<WomenScreen> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20,vertical: 3),
             decoration: BoxDecoration(
-              color: Color(0xFFFF6000),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 5,
-                  offset: Offset(0, 3)
-                )
-              ]
+                color: Color(0xFFFF6000),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 5,
+                      offset: Offset(0, 3)
+                  )
+                ]
             ),
             child: Text('Fashion',
               style: TextStyle(
@@ -68,11 +69,11 @@ class _WomenScreenState extends State<WomenScreen> {
             ),
           ),
           IconButton(
-              onPressed: (){},
-              icon: Image.asset(
-                "assets/icons/filter_icon.png",
-                fit: BoxFit.cover,
-              ),
+            onPressed: (){},
+            icon: Image.asset(
+              "assets/icons/filter_icon.png",
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),
@@ -98,6 +99,7 @@ class _WomenScreenState extends State<WomenScreen> {
                   ),
                   Expanded(
                       child: Container(
+                        height: 30,
                         padding: EdgeInsets.only(left: 10, right: 10),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
@@ -144,7 +146,7 @@ class _WomenScreenState extends State<WomenScreen> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height*.65,
+              height: MediaQuery.of(context).size.height*.68,
               child: Padding(
                   padding: EdgeInsets.all(10),
                 child: WomenScreenBody(),
@@ -160,40 +162,7 @@ class _WomenScreenState extends State<WomenScreen> {
 
 
 
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-          type: BottomNavigationBarType.fixed,
-          selectedLabelStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey,
-          selectedIconTheme: IconThemeData(color: Color(0xFFFF6000)),
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-              label: 'Home'
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border_outlined),
-              label: 'Whitelist',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined),
-              label: 'Account',
-            ),
-          ],
-
-        onTap: (index){
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
+      bottomNavigationBar: BottomNav()
 
     );
   }
