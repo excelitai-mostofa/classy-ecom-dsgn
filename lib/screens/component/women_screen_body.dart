@@ -13,33 +13,28 @@ class WomenScreenBody extends StatelessWidget {
     final products = productData.items;
 
     return GridView.builder(
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      physics: ScrollPhysics(),
-      padding: EdgeInsets.all(10),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 2/3,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        mainAxisExtent: 230
       ),
-      itemBuilder: (ctx,i) => Card(
-        child: Container(
-          child: GestureDetector(
-            onTap: (){
-              Navigator.of(context).pushNamed(
-                WomenSubCatScreen.routeName
-              );
-            },
-            child: Column(
-              children: [
-                Image.asset(products[i].imageUrl!),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(products[i].categoryName!),
-                )
-              ],
-            ),
+      itemBuilder: (ctx,i) => Container(
+        child: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pushNamed(
+              WomenSubCatScreen.routeName
+            );
+          },
+          child: Column(
+            children: [
+              Image.asset(products[i].imageUrl!),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(products[i].categoryName!),
+              )
+            ],
           ),
         ),
       ),

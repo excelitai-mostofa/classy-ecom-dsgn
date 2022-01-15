@@ -17,26 +17,25 @@ class SubCategoryBody extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 2/3,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          mainAxisExtent: 230
         ),
-        itemBuilder: (ctx, i)=> Card(
-          child: Container(
-            child: GestureDetector(
-              onTap: (){
-                Navigator.of(context).pushNamed(
-                    SubSubProductScreen.routeName
-                );
-              },
-              child: Column(
-                children: [
-                  Image.asset(subCategories[i].imageUrl!),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(subCategories[i].categoryName!),
-                  )
-                ],
-              ),
+        itemBuilder: (ctx, i)=> Container(
+          child: GestureDetector(
+            onTap: (){
+              Navigator.of(context).pushNamed(
+                  SubSubProductScreen.routeName
+              );
+            },
+            child: Column(
+              children: [
+                Image.asset(subCategories[i].imageUrl!),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(subCategories[i].categoryName!),
+                )
+              ],
             ),
           ),
         ),

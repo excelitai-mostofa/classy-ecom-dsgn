@@ -14,40 +14,95 @@ class SubSubProductItems extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 2/3,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 40,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 20,
+        mainAxisExtent: 300
       ),
-      itemBuilder: (ctx, i)=> Container(
-        height: 600,
-        child: Column(
-          children: [
-            Card(
-              child: Column(
-                children: [
-                  Image.asset(subSubProducts[i].productImageUrl!,),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10,),
-                        Text(subSubProducts[i].productName!,
+      itemBuilder: (ctx, i)=> Column(
+        children: [
+          Container(
+            height: 250,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 3,
+                  offset: Offset(0, 2), // changes position of shadow
+                ),
+              ],
+            ),
+            child: Stack(
+              children: [
+                Image.asset(subSubProducts[i].productImageUrl!,),
+                Positioned(
+                  right: 5,
+                  bottom: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 3,
+                          offset: Offset(0, 2),
+                        )
+                      ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 15,
+                      child: Icon(Icons.shopping_bag_outlined,
+                        size: 18,
+                        color: Colors.orange,
+                      ),
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Text(subSubProducts[i].productName!,
                           style: TextStyle(color: Colors.grey),
                         ),
-                        SizedBox(height: 10,),
-                        Text(subSubProducts[i].productPrice!)
-                      ],
-                    ),
-                  )
-                ],
+                      ),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Text(subSubProducts[i].productPrice!),
+                      ),
+                      SizedBox(height: 10,),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+
+          SizedBox(height: 15,),
+          Container(
+            width: 140,
+            height: 30,
+            child: ElevatedButton(
+                onPressed: (){},
+                child: Text('Add to cart'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                onPrimary: Colors.orange,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                side: BorderSide(width: 1, color: Colors.orange)
               ),
             ),
-
-            ElevatedButton(
-                onPressed: (){},
-                child: Text('Add to cart')
-            )
-          ],
-        ),
+          )
+        ],
       ),
       itemCount: subSubProducts.length,
     );
