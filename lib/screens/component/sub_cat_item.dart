@@ -1,4 +1,4 @@
-import 'package:classy_ecom_desgn/models/women_prod_sub_cat.dart';
+import 'package:classy_ecom_desgn/models/prod_sub_cat.dart';
 import 'package:classy_ecom_desgn/screens/sub_sub_products.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +9,7 @@ class SubCategoryBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subCatData = Provider.of<WomenProdSubCatModel>(context);
+    final subCatData = Provider.of<ProdSubCatModel>(context);
     final subCategories = subCatData.items;
 
 

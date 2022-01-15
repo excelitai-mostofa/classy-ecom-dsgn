@@ -1,18 +1,17 @@
-import 'package:classy_ecom_desgn/screens/component/women_screen_body.dart';
+import 'package:classy_ecom_desgn/screens/component/sub_cat_item.dart';
 import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
-class WomenScreen extends StatefulWidget {
-  const WomenScreen({Key? key}) : super(key: key);
+class SubCatScreen extends StatefulWidget {
+  const SubCatScreen({Key? key}) : super(key: key);
+
+  static const routeName = '/product-subCat';
 
   @override
-  State<WomenScreen> createState() => _WomenScreenState();
+  State<SubCatScreen> createState() => _SubCatScreenState();
 }
 
-class _WomenScreenState extends State<WomenScreen> {
-
-
-
+class _SubCatScreenState extends State<SubCatScreen> {
   String dropdownvalue = 'Default';
   var items = [
     'Default',
@@ -27,12 +26,9 @@ class _WomenScreenState extends State<WomenScreen> {
   ];
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
 
       appBar: AppBar(
         backgroundColor: Color(0xFFFFA800),
@@ -79,68 +75,70 @@ class _WomenScreenState extends State<WomenScreen> {
       ),
 
 
-
-
-
       body: SingleChildScrollView(
         //physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*.05),
+            //SizedBox(height: MediaQuery.of(context).size.height*.01),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
+              padding: const EdgeInsets.all(15),
+              child: Column(
                 children: [
-                  SizedBox(width: 10,),
-                  Expanded(
-                    child: Text('Women',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Women '),
+                      Text('> Selwar Kameez',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
                   ),
-                  Expanded(
-                      child: Container(
-                        height: 30,
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        decoration: BoxDecoration(
+                  SizedBox(height: 10,),
+                  Padding(
+                    padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*.5),
+                    child: Container(
+                      height: 30,
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(5)
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: IconButton(
-                                  onPressed: (){},
-                                  icon: Image.asset('assets/icons/dropDown_icon.png')
-                              ),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: IconButton(
+                                onPressed: (){},
+                                icon: Image.asset('assets/icons/dropDown_icon.png')
                             ),
-                            Expanded(
-                              flex: 4,
-                              child: DropdownButton(
+                          ),
+                          Expanded(
+                            flex: 4,
+                            child: DropdownButton(
                                 isExpanded: true,
                                 iconSize: 15,
                                 underline: SizedBox(),
                                 style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.black
+                                    fontSize: 10,
+                                    color: Colors.black
                                 ),
                                 value: dropdownvalue,
-                                  icon: Icon(Icons.keyboard_arrow_down),
-                                  items: items.map((String items){
-                                    return DropdownMenuItem(
-                                        child: Text(items),
-                                      value: items,
-                                    );
-                                  }).toList(),
-                                  onChanged: (String? newValue){
-                                    setState(() {
-                                      dropdownvalue = newValue!;
-                                    });
-                                  }
-                              ),
+                                icon: Icon(Icons.keyboard_arrow_down),
+                                items: items.map((String items){
+                                  return DropdownMenuItem(
+                                    child: Text(items),
+                                    value: items,
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue){
+                                  setState(() {
+                                    dropdownvalue = newValue!;
+                                  });
+                                }
                             ),
-                          ],
-                        ),
-                      )
+                          ),
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -148,8 +146,8 @@ class _WomenScreenState extends State<WomenScreen> {
             Container(
               height: MediaQuery.of(context).size.height*.68,
               child: Padding(
-                  padding: EdgeInsets.all(10),
-                child: WomenScreenBody(),
+                padding: EdgeInsets.all(10),
+                child: SubCategoryBody(),
               ),
             ),
 
@@ -160,9 +158,7 @@ class _WomenScreenState extends State<WomenScreen> {
 
 
 
-
-
-      bottomNavigationBar: BottomNav()
+      bottomNavigationBar: BottomNav(),
 
     );
   }

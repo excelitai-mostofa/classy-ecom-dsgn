@@ -1,32 +1,32 @@
 import 'package:flutter/cupertino.dart';
 
-class WomenProdSubCatModel with ChangeNotifier{
+class ProdSubCatModel with ChangeNotifier{
   String? categoryName;
   String? imageUrl;
 
-  WomenProdSubCatModel({this.categoryName,this.imageUrl});
+  ProdSubCatModel({this.categoryName,this.imageUrl});
 
-  static List<WomenProdSubCatModel> prodSubCatData=[
-    WomenProdSubCatModel(
+  static List<ProdSubCatModel> prodSubCatData=[
+    ProdSubCatModel(
       categoryName: "Long kameez",
       imageUrl: "assets/women_images/salwar_kameez.png",
     ),
-    WomenProdSubCatModel(
+    ProdSubCatModel(
       categoryName: "Short kameez",
       imageUrl: "assets/women_images/salwar_kameez.png",
     ),
-    WomenProdSubCatModel(
+    ProdSubCatModel(
       categoryName: "Stritched",
       imageUrl: "assets/women_images/salwar_kameez.png",
     ),
-    WomenProdSubCatModel(
+    ProdSubCatModel(
       categoryName: "UnStritched",
       imageUrl: "assets/women_images/salwar_kameez.png",
     ),
   ];
 
 
-  List<WomenProdSubCatModel> get items{
+  List<ProdSubCatModel> get items{
     return [...prodSubCatData];
   }
 

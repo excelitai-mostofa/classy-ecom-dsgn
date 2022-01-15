@@ -16,22 +16,22 @@ class SubSubProductsModel with ChangeNotifier{
     SubSubProductsModel(
         productName: "Sharee",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 200"
     ),
     SubSubProductsModel(
         productName: "Lehenga",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 300"
     ),
     SubSubProductsModel(
         productName: "Kaftan",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 150"
     ),
     SubSubProductsModel(
         productName: "Kurtis",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 199"
     ),
     SubSubProductsModel(
         productName: "Burqa",
@@ -49,8 +49,6 @@ class SubSubProductsModel with ChangeNotifier{
   List<SubSubProductsModel> get items{
     return [...subSubProductData];
   }
-
-
 
 
 }
