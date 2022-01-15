@@ -53,7 +53,7 @@ class SubSubProductItems extends StatelessWidget {
                     ),
                     child: CircleAvatar(
                       radius: 15,
-                      child: Icon(Icons.shopping_bag_outlined,
+                      child: Icon(Icons.favorite_border_outlined,
                         size: 18,
                         color: Colors.orange,
                       ),

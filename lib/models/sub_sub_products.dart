@@ -11,7 +11,7 @@ class SubSubProductsModel with ChangeNotifier{
     SubSubProductsModel(
         productName: "Selwar kameez",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 110"
     ),
     SubSubProductsModel(
         productName: "Sharee",
@@ -36,7 +36,7 @@ class SubSubProductsModel with ChangeNotifier{
     SubSubProductsModel(
         productName: "Burqa",
         productImageUrl: "assets/women_images/salwar_kameez.png",
-        productPrice: "\$ 100"
+        productPrice: "\$ 150"
     ),
     SubSubProductsModel(
         productName: "Shoes",
