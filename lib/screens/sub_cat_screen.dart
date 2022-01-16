@@ -1,17 +1,23 @@
+import 'package:classy_ecom_desgn/models/prod_category.dart';
 import 'package:classy_ecom_desgn/screens/component/sub_cat_item.dart';
 import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SubCatScreen extends StatefulWidget {
-  const SubCatScreen({Key? key}) : super(key: key);
+  //const SubCatScreen({Key? key}) : super(key: key);
+
 
   static const routeName = '/product-subCat';
+
+
 
   @override
   State<SubCatScreen> createState() => _SubCatScreenState();
 }
 
 class _SubCatScreenState extends State<SubCatScreen> {
+
   String dropdownvalue = 'Default';
   var items = [
     'Default',
@@ -28,12 +34,19 @@ class _SubCatScreenState extends State<SubCatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // final CatData = Provider.of<ProdCategoryModel>(context);
+    // final cat = CatData.items;
+    final catName = ModalRoute.of(context)!.settings.arguments as String;
+
+
     return Scaffold(
 
       appBar: AppBar(
         backgroundColor: Color(0xFFFFA800),
         leading: GestureDetector(
-          onTap: (){},
+          onTap: (){
+            Navigator.pop(context);
+            },
           child: Icon(Icons.arrow_back_ios,color: Colors.black,),
         ),
         title: Center(
@@ -88,7 +101,7 @@ class _SubCatScreenState extends State<SubCatScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text('Women '),
-                      Text('> Selwar Kameez',
+                      Text('> $catName',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )
                     ],
@@ -144,10 +157,10 @@ class _SubCatScreenState extends State<SubCatScreen> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height*.68,
+              height: MediaQuery.of(context).size.height*.75,
               child: Padding(
                 padding: EdgeInsets.all(10),
-                child: SubCategoryBody(),
+                child: SubCategoryBody(cat: catName),
               ),
             ),
 

@@ -146,7 +146,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height*.68,
+              height: MediaQuery.of(context).size.height*.75,
               child: Padding(
                   padding: EdgeInsets.all(10),
                 child: CategoryScreenBody(),

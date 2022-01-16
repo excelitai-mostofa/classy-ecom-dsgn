@@ -1,6 +1,8 @@
+import 'package:classy_ecom_desgn/models/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/screens/component/sub_sub_prod_items.dart';
 import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SubSubProductScreen extends StatefulWidget {
   const SubSubProductScreen({Key? key}) : super(key: key);
@@ -12,6 +14,8 @@ class SubSubProductScreen extends StatefulWidget {
 }
 
 class _SubSubProductScreenState extends State<SubSubProductScreen> {
+
+
   String dropdownvalue = 'Default';
   var items = [
     'Default',
@@ -25,15 +29,32 @@ class _SubSubProductScreenState extends State<SubSubProductScreen> {
     'Rating: high to low'
   ];
 
+  Future<void> _sortProd()async{
+    if(dropdownvalue=="Name: A to Z"){
+      await Provider.of<SubSubProductsModel>(context, listen: false).ascendingTitle();
+    }else if(dropdownvalue=="Name: Z to A"){
+      await Provider.of<SubSubProductsModel>(context, listen: false).descendingTitle();
+    }else if(dropdownvalue=="Price: low to high"){
+      await Provider.of<SubSubProductsModel>(context, listen: false).priceLowToHigh();
+    }else if(dropdownvalue=="price: high to low"){
+      await Provider.of<SubSubProductsModel>(context, listen: false).priceHighToLow();
+    }
+  }
+
 
 
   @override
   Widget build(BuildContext context) {
+    final subCatName = ModalRoute.of(context)!.settings.arguments as Map;
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFFFA800),
         leading: GestureDetector(
-          onTap: (){},
+          onTap: (){
+            Navigator.pop(context);
+          },
           child: Icon(Icons.arrow_back_ios,color: Colors.black,),
         ),
         title: Center(
@@ -89,8 +110,8 @@ class _SubSubProductScreenState extends State<SubSubProductScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text('Women '),
-                      Text(' >  Selwar Kameez '),
-                      Text(' >  Long Kameez',
+                      Text(' >  ${subCatName['a']}'),
+                      Text(' >  ${subCatName['b']}',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -134,7 +155,9 @@ class _SubSubProductScreenState extends State<SubSubProductScreen> {
                                 onChanged: (String? newValue){
                                   setState(() {
                                     dropdownvalue = newValue!;
+                                    _sortProd();
                                   });
+
                                 }
                             ),
                           ),
@@ -146,7 +169,7 @@ class _SubSubProductScreenState extends State<SubSubProductScreen> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height*.68,
+              height: MediaQuery.of(context).size.height*.73,
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: SubSubProductItems(),

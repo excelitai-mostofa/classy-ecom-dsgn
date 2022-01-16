@@ -9,8 +9,8 @@ class CategoryScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final productData = Provider.of<ProdCategoryModel>(context);
-    final products = productData.items;
+    final categoryData = Provider.of<ProdCategoryModel>(context);
+    final categories = categoryData.items;
 
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -24,21 +24,21 @@ class CategoryScreenBody extends StatelessWidget {
         child: GestureDetector(
           onTap: (){
             Navigator.of(context).pushNamed(
-              SubCatScreen.routeName
+              SubCatScreen.routeName, arguments: categories[i].categoryName
             );
           },
           child: Column(
             children: [
-              Image.asset(products[i].imageUrl!),
+              Image.asset(categories[i].imageUrl!),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(products[i].categoryName!),
+                child: Text(categories[i].categoryName!),
               )
             ],
           ),
         ),
       ),
-      itemCount: products.length,
+      itemCount: categories.length,
     );
   }
 }
