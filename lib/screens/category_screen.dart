@@ -83,7 +83,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
 
       body: SingleChildScrollView(
-        //physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height*.05),

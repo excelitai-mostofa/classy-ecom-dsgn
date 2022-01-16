@@ -1,8 +1,7 @@
-import 'package:classy_ecom_desgn/models/prod_category.dart';
+
 import 'package:classy_ecom_desgn/screens/component/sub_cat_item.dart';
 import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SubCatScreen extends StatefulWidget {
   //const SubCatScreen({Key? key}) : super(key: key);
@@ -34,8 +33,6 @@ class _SubCatScreenState extends State<SubCatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final CatData = Provider.of<ProdCategoryModel>(context);
-    // final cat = CatData.items;
     final catName = ModalRoute.of(context)!.settings.arguments as String;
 
 
@@ -89,10 +86,8 @@ class _SubCatScreenState extends State<SubCatScreen> {
 
 
       body: SingleChildScrollView(
-        //physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
-            //SizedBox(height: MediaQuery.of(context).size.height*.01),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Column(
