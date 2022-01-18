@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class FilterScreen extends StatefulWidget {
   const FilterScreen({Key? key}) : super(key: key);
 
+  static const routeName = '/filter-page';
+
   @override
   _FilterScreenState createState() => _FilterScreenState();
 }
@@ -58,14 +60,37 @@ class _FilterScreenState extends State<FilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Filters',
-          style: TextStyle(
-            color: Colors.black
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back_ios,color: Colors.black,),
+        ),
+
+
+        title: Container(
+          height: 19,
+          width: 80,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey,
+              width: .5
+            ),
+            borderRadius: BorderRadius.circular(10)
+          ),
+          child: Center(
+            child: Text('Filters',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14
+              ),
+            ),
           ),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
+
 
       ),
       
@@ -83,7 +108,8 @@ class _FilterScreenState extends State<FilterScreen> {
                   border: Border.all(
                     color: Colors.grey,
                     width: .5
-                  )
+                  ),
+                  borderRadius: BorderRadius.circular(7)
                 ),
                 child: Column(
                   children: [
@@ -289,7 +315,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: ElevatedButton(
                         onPressed: (){},
-                        child: Text('Add to cart'),
+                        child: Text('Apply Filters'),
                         style: ElevatedButton.styleFrom(
                             primary: Color(0xFFFF6000),
                             onPrimary: Colors.white,
@@ -333,8 +359,13 @@ class _FilterScreenState extends State<FilterScreen> {
 
   Widget categorySingleCheckBox(CatCheckBoxState category){
     return CheckboxListTile(
+      activeColor: Color(0xFFFF6000),
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text(category.title),
+        title: Text(category.title,
+          style: TextStyle(
+            color: Colors.grey
+          ),
+        ),
         value: category.value,
         onChanged: (value)=> setState(() {
           category.value = value!;
@@ -345,8 +376,13 @@ class _FilterScreenState extends State<FilterScreen> {
 
   Widget brandSingleCheckBox(BrandCheckBoxState brand){
     return CheckboxListTile(
+      activeColor: Color(0xFFFF6000),
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text(brand.title),
+        title: Text(brand.title,
+          style: TextStyle(
+              color: Colors.grey
+          ),
+        ),
         value: brand.value,
         onChanged: (value)=> setState(() {
           brand.value = value!;
@@ -357,8 +393,13 @@ class _FilterScreenState extends State<FilterScreen> {
 
   Widget tagSingleCheckBox(TagCheckBoxState tag){
     return CheckboxListTile(
+      activeColor: Color(0xFFFF6000),
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text(tag.title),
+        title: Text(tag.title,
+          style: TextStyle(
+              color: Colors.grey
+          ),
+        ),
         value: tag.value,
         onChanged: (value)=> setState(() {
           tag.value = value!;
@@ -369,8 +410,13 @@ class _FilterScreenState extends State<FilterScreen> {
 
   Widget sizeSingleCheckBox(SizeCheckBoxState size){
     return CheckboxListTile(
+      activeColor: Color(0xFFFF6000),
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text(size.title),
+        title: Text(size.title,
+          style: TextStyle(
+              color: Colors.grey
+          ),
+        ),
         value: size.value,
         onChanged: (value)=> setState(() {
           size.value = value!;

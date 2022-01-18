@@ -1,5 +1,6 @@
 import 'package:classy_ecom_desgn/models/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/screens/component/sub_sub_prod_items.dart';
+import 'package:classy_ecom_desgn/screens/filter_screen.dart';
 import 'package:classy_ecom_desgn/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -86,7 +87,9 @@ class _SubSubProductScreenState extends State<SubSubProductScreen> {
             ),
           ),
           IconButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.of(context).pushNamed(FilterScreen.routeName);
+            },
             icon: Image.asset(
               "assets/icons/filter_icon.png",
               fit: BoxFit.cover,

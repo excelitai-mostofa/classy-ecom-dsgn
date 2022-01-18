@@ -33,7 +33,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
 
 
-
       appBar: AppBar(
         backgroundColor: Color(0xFFFFA800),
         leading: GestureDetector(
@@ -77,8 +76,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
           ),
         ],
       ),
-
-
 
 
 
