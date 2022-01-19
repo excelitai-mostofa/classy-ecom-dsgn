@@ -39,28 +39,125 @@ class SubSubProductItems extends StatelessWidget {
                 Positioned(
                   right: 5,
                   bottom: 60,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 3,
-                          offset: Offset(0, 2),
-                        )
-                      ]
-                    ),
-                    child: CircleAvatar(
-                      radius: 15,
-                      child: Icon(Icons.favorite_border_outlined,
-                        size: 18,
-                        color: Colors.orange,
+                  child: GestureDetector(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 3,
+                            offset: Offset(0, 2),
+                          )
+                        ]
                       ),
-                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 15,
+                        child: Icon(Icons.card_travel_outlined,
+                          size: 18,
+                          color: Colors.orange,
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
                     ),
                   ),
                 ),
+                Positioned(
+                  left: 10,
+                  top: 70,
+                  child: GestureDetector(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: Offset(0, 2),
+                            )
+                          ]
+                      ),
+                      child: CircleAvatar(
+                        radius: 12,
+                        child: Icon(Icons.favorite_border_outlined,
+                          size: 15,
+                          color: Colors.grey,
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 45,
+                  top: 70,
+                  child: GestureDetector(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: Offset(0, 2),
+                            )
+                          ]
+                      ),
+                      child: CircleAvatar(
+                        radius: 12,
+                        child: Icon(Icons.search,
+                          size: 15,
+                          color: Colors.grey,
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+
+                Positioned(
+                  left: 80,
+                  top: 70,
+                  child: GestureDetector(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: Offset(0, 2),
+                            )
+                          ]
+                      ),
+                      child: CircleAvatar(
+                        radius: 12,
+                        child: Icon(Icons.card_travel_outlined,
+                          size: 15,
+                          color: Colors.grey,
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+
                 Positioned(
                   bottom: 0,
                   child: Column(
