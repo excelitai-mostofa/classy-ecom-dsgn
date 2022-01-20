@@ -61,7 +61,7 @@ class OrderStatus extends StatelessWidget {
               //     width: .5
               //   )
               // ),
-              child: Image.asset('assets/women_images/order_status.png'),
+              child: Image.asset('assets/images/order_status.png'),
             ),
 
             SizedBox(height: 10,),

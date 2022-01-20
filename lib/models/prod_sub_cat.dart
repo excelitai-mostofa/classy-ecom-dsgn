@@ -9,19 +9,19 @@ class ProdSubCatModel with ChangeNotifier{
   static List<ProdSubCatModel> prodSubCatData=[
     ProdSubCatModel(
       categoryName: "Long kameez",
-      imageUrl: "assets/women_images/salwar_kameez.png",
+      imageUrl: "assets/images/salwar_kameez.png",
     ),
     ProdSubCatModel(
       categoryName: "Short kameez",
-      imageUrl: "assets/women_images/salwar_kameez.png",
+      imageUrl: "assets/images/salwar_kameez.png",
     ),
     ProdSubCatModel(
       categoryName: "Stritched",
-      imageUrl: "assets/women_images/salwar_kameez.png",
+      imageUrl: "assets/images/salwar_kameez.png",
     ),
     ProdSubCatModel(
       categoryName: "UnStritched",
-      imageUrl: "assets/women_images/salwar_kameez.png",
+      imageUrl: "assets/images/salwar_kameez.png",
     ),
   ];
 
