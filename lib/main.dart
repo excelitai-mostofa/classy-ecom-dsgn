@@ -2,7 +2,7 @@ import 'package:classy_ecom_desgn/models/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/models/prod_category.dart';
 import 'package:classy_ecom_desgn/models/prod_sub_cat.dart';
 import 'package:classy_ecom_desgn/screens/filter_screen.dart';
-import 'package:classy_ecom_desgn/screens/navigation/drawer.dart';
+import 'package:classy_ecom_desgn/screens/navigation/detail_page_with_drawer.dart';
 import 'package:classy_ecom_desgn/screens/order_status.dart';
 import 'package:classy_ecom_desgn/screens/sub_sub_products.dart';
 import 'package:classy_ecom_desgn/screens/category_screen.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: ComplexDrawerPage(),
+        home: ProductdetailwithDrawerPage(),
 
         routes: {
           SubCatScreen.routeName: (context)=> SubCatScreen(),
